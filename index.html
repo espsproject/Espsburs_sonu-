@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ESPSPROJECT - Login</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.box {
+  background: white;
+  width: 340px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+h1 {
+  color: #e53935;
+  margin-bottom: 10px;
+}
+
+.notice {
+  background: #fce4ec;
+  color: #880e4f;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #357abd;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>ESPSPROJECT</h1>
+
+  <div class="notice">
+    Attention: Invalid username or password will be rejected.
+  </div>
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="login()">LOGIN</button>
+
+  <div class="error" id="errorMsg">
+    ❌ Access Denied
+  </div>
+</div>
+
+<script>
+function login() {
+  var user = document.getElementById("username").value;
+  var pass = document.getElementById("password").value;
+
+  if (user === "admin" && pass === "1234") {
+    alert("✅ Login successful");
+  } else {
+    document.getElementById("errorMsg").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
